@@ -103,8 +103,6 @@ const Scene = React.forwardRef(({ nextFunc, _baseGeo, loadFunc, bgLoaded }, ref)
     useEffect(() => {
 
 
-
-
         return () => {
             currentMaskNum = 0;
             subMaskNum = 0
@@ -132,19 +130,12 @@ const Scene = React.forwardRef(({ nextFunc, _baseGeo, loadFunc, bgLoaded }, ref)
 
 
             setTimeout(() => {
-                // setSubMaskLoaded(true)
                 audioList.bodyAudio2.play()
                 setTimeout(() => {
                     showIndividualImage()
                 }, audioList.bodyAudio2.duration * 1000 + 1000);
             }, 3000);
 
-
-
-
-            // setTimeout(() => {
-            //     showIndividualImage()
-            // }, 1000);
         },
         sceneEnd: () => {
             currentMaskNum = 0;
@@ -282,8 +273,6 @@ const Scene = React.forwardRef(({ nextFunc, _baseGeo, loadFunc, bgLoaded }, ref)
                                 }, 2000);
                             }
                             else {
-                                // if (currentMaskNum > 6)
-                                //     wordTextList[currentMaskNum - 7].current.setClass('hide')
 
                                 if (currentMaskName == 'sub') {
                                     subMaskRefList.map(mask => {
@@ -382,16 +371,6 @@ const Scene = React.forwardRef(({ nextFunc, _baseGeo, loadFunc, bgLoaded }, ref)
                                 url={'bg/base.png'}
                             />
 
-                            {/* {
-                        outLineRefList.map(
-                            (value, index) =>
-                                <BaseImage
-                                    className='hideObject'
-                                    ref={outLineRefList[index]}
-                                />
-                        )
-
-                    } */}
 
                         </div>
                     </div>

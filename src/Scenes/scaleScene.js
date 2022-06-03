@@ -166,10 +166,9 @@ const Scene = React.forwardRef(({ nextFunc, _baseGeo, loadFunc, bgLoaded }, ref)
         setTimeout(() => {
             let timeDuration = 4000
 
-            audioPathList[currentMaskNum].map(
-                (value, index) => {
-                    timeDuration += bodyAudioList[index].duration * 1000 + 500
-                }
+            audioPathList[currentMaskNum].map((value, index) => {
+                timeDuration += bodyAudioList[index].duration * 1000 + 500
+            }
             )
 
             if (currentMaskName != 'sub') {
@@ -220,6 +219,7 @@ const Scene = React.forwardRef(({ nextFunc, _baseGeo, loadFunc, bgLoaded }, ref)
 
                 let time = 0
 
+
                 audioPathList[currentMaskNum].map((value, index) => {
                     setTimeout(() => {
                         bodyAudioList[index].play()
@@ -227,10 +227,13 @@ const Scene = React.forwardRef(({ nextFunc, _baseGeo, loadFunc, bgLoaded }, ref)
                     time += bodyAudioList[index].duration * 1000 + 500
                 })
 
+
                 setTimeout(() => {
-                    audioPathList[currentMaskNum + 1].map((value, index) => {
-                        bodyAudioList[index].src = getAudioPath('intro/' + value);
-                    })
+                    if (currentMaskNum < audioPathList.length - 1) {
+                        audioPathList[currentMaskNum + 1].map((value, index) => {
+                            bodyAudioList[index].src = getAudioPath('intro/' + value);
+                        })
+                    }
 
                     setTimeout(() => {
                         currentImage.current.style.transform = "scale(1)"

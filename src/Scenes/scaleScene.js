@@ -166,15 +166,11 @@ const Scene = React.forwardRef(({ nextFunc, _baseGeo, loadFunc, bgLoaded }, ref)
         setTimeout(() => {
             let timeDuration = 4000
 
-            if (currentMaskNum < 7) {
-                audioPathList[currentMaskNum].map((value, index) => {
+            audioPathList[currentMaskNum].map(
+                (value, index) => {
                     timeDuration += bodyAudioList[index].duration * 1000 + 500
                 }
-                )
-            }
-
-            // if (currentMaskNum > 6)
-            //     wordTextList[currentMaskNum - 7].current.setClass('appear')
+            )
 
             if (currentMaskName != 'sub') {
                 blackWhiteObject.current.className = 'show'
@@ -224,22 +220,17 @@ const Scene = React.forwardRef(({ nextFunc, _baseGeo, loadFunc, bgLoaded }, ref)
 
                 let time = 0
 
-                if (currentMaskNum < 7)
-                    audioPathList[currentMaskNum].map((value, index) => {
-                        setTimeout(() => {
-                            bodyAudioList[index].play()
-                        }, time);
-                        time += bodyAudioList[index].duration * 1000 + 500
-                    })
-
-
+                audioPathList[currentMaskNum].map((value, index) => {
+                    setTimeout(() => {
+                        bodyAudioList[index].play()
+                    }, time);
+                    time += bodyAudioList[index].duration * 1000 + 500
+                })
 
                 setTimeout(() => {
-                    if (currentMaskNum < 6) {
-                        audioPathList[currentMaskNum + 1].map((value, index) => {
-                            bodyAudioList[index].src = getAudioPath('intro/' + value);
-                        })
-                    }
+                    audioPathList[currentMaskNum + 1].map((value, index) => {
+                        bodyAudioList[index].src = getAudioPath('intro/' + value);
+                    })
 
                     setTimeout(() => {
                         currentImage.current.style.transform = "scale(1)"

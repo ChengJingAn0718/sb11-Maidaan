@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useContext, useState } from 'react';
 import "../stylesheets/styles.css";
 import BaseImage from '../components/BaseImage';
 import { UserContext } from '../components/BaseShot';
-import { prePathUrl, getAudioPath, setRepeatType, setRepeatAudio, startRepeatAudio, stopRepeatAudio } from "../components/CommonFunctions";
+import { prePathUrl, getAudioPath, setRepeatType, setRepeatAudio, startRepeatAudio, stopRepeatAudio, setExtraVolume } from "../components/CommonFunctions";
 import { textInfoList, iconList, gapList } from "../components/CommonVarariant"
 
 
@@ -81,6 +81,11 @@ const Scene = React.forwardRef(({ nextFunc, _baseGeo, _geo }, ref) => {
             timerList[0] = setTimeout(activeBtnFunc, 2500);
 
             setRepeatType(2)
+
+            for (let i = 0; i < 10; i++)
+                setExtraVolume(audioList[i], 3)
+            setExtraVolume(audioList.commonAudio3, 3)
+
 
             audioList.bodyAudio1.src = prePathUrl() + "sounds/main/common/review0.mp3"
             audioList.bodyAudio2.src = prePathUrl() + "sounds/main/common/review1.mp3"

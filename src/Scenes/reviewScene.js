@@ -83,12 +83,11 @@ const Scene = React.forwardRef(({ nextFunc, _baseGeo, _geo }, ref) => {
             setRepeatType(2)
 
             for (let i = 0; i < 10; i++)
-                setExtraVolume(audioList[i], 3)
-            setExtraVolume(audioList.commonAudio3, 3)
+                setExtraVolume(audioList[i], 4)
+            setExtraVolume(audioList.commonAudio3, 4)
 
 
             audioList.bodyAudio1.src = prePathUrl() + "sounds/main/common/review0.mp3"
-            audioList.bodyAudio2.src = prePathUrl() + "sounds/main/common/review1.mp3"
 
             imageCount = 0;
             isEffectPassed = true;

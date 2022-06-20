@@ -129,9 +129,9 @@ const Scene = React.forwardRef(({ nextFunc, _baseGeo, loadFunc, bgLoaded }, ref)
             currentImage.current.style.transition = '0.5s'
 
 
-            setExtraVolume(audioList.bodyAudio1, 3)
-            setExtraVolume(audioList.bodyAudio2, 3)
-            setExtraVolume(audioList.bodyAudio3, 3)
+            setExtraVolume(audioList.bodyAudio1, 4)
+            setExtraVolume(audioList.bodyAudio2, 4)
+            setExtraVolume(audioList.bodyAudio3, 4)
 
             setTimeout(() => {
                 audioList.bodyAudio2.play()

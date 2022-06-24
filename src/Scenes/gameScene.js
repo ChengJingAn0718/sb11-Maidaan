@@ -60,8 +60,11 @@ const Scene = React.forwardRef(({ nextFunc, _baseGeo, _geo, loadFunc }, ref) => 
             startSecondPart()
             loadFunc()
 
-            setExtraVolume(audioList.commonAudio2, 4)
-            setExtraVolume(audioList.commonAudio1, 4)
+            setExtraVolume(audioList.commonAudio2, 6)
+            setExtraVolume(audioList.commonAudio1, 6)
+
+            setExtraVolume(audioList.bodyAudio1, 8)
+            setExtraVolume(audioList.bodyAudio2, 8)
 
         },
         sceneEnd: () => {
@@ -91,14 +94,16 @@ const Scene = React.forwardRef(({ nextFunc, _baseGeo, _geo, loadFunc }, ref) => 
 
     const showControlFunc = () => {
 
-        blackWhiteObject.current.style.WebkitMaskImage = 'url("' + prePathUrl() + 'images/question/' + (stepCount + 2) + '/m.png")'
+        if (stepCount < questionPartCount - 1) {
+            blackWhiteObject.current.style.WebkitMaskImage = 'url("' + prePathUrl() + 'images/question/' + (stepCount + 2) + '/m.png")'
 
-        if (stepCount < questionPartCount - 1)
-            aniImageList.map((image, index) => {
-                if (index < 3)
-                    image.current.setUrl('question/' + (stepCount + 2) + '/' + (index + 1) + '.png')
-            })
+            if (stepCount < questionPartCount - 1)
+                aniImageList.map((image, index) => {
+                    if (index < 3)
+                        image.current.setUrl('question/' + (stepCount + 2) + '/' + (index + 1) + '.png')
+                })
 
+        }
 
         timerList[2] = setTimeout(() => {
             if (stepCount == 0)
@@ -433,7 +438,7 @@ const Scene = React.forwardRef(({ nextFunc, _baseGeo, _geo, loadFunc }, ref) => 
                                             top: '-32%'
                                         }}
                                         draggable={false}
-                                        src={prePathUrl() + 'images/Buttons/Answer_Button.svg'}
+                                        src={prePathUrl() + 'images/buttons/answer_button.svg'}
                                     />
                                 </div>
                             </div>

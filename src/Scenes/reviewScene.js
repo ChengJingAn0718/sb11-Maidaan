@@ -22,12 +22,12 @@ let wordGround = [6, 4]
 
 const posInfoList = [
 
-    { x: 1, y: 40 },
+    { x: 4, y: 40 },
     { x: 34, y: 40 },
-    { x: 68, y: 40, m: true },
-    { x: 1, y: 70 },
+    { x: 64, y: 40, m: true },
+    { x: 4, y: 70 },
     { x: 34, y: 70 },
-    { x: 68, y: 70, m: true },
+    { x: 64, y: 70, m: true },
 
     { x: 10, y: 40 },
     { x: 50, y: 40 },
